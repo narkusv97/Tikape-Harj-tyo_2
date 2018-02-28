@@ -1,0 +1,91 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    
+
+   <head>
+        
+     <title>FORUUMI</title>
+        
+     <meta charset="utf-8" />
+     
+   </head>
+
+    
+
+
+   <body>
+             
+       <h1>Smoothiet</h1>
+
+      
+       <h2>Lis‰‰ uusi</h2> 
+                     
+
+<p>
+Smoothien nimi:<br/>
+                        
+<form action="/annos/:nimi" method="POST">
+
+<input type="hidden" name="annosid" th:value="${annos.annosid}"/>
+                                                      
+<input type="text" name="name"/><br/>
+                                                       
+<input type="submit" value="Lis‰‰"/><br/>
+                        
+</form>
+                    
+</p>
+
+
+<h3>Lis‰‰ raakaaineita</h3>
+<p>
+<form>
+Smoothien nimi:<br></br>
+<select name="annos"><option></option></select>
+</form>
+
+<form>
+Lis‰tt‰v‰ raaka-aine:<br></br>
+<select name="raakaaine"><option></option></select>
+</form>
+                                 
+J‰rjestys<br/>
+                        
+<form action="/annosraakaaine/:jarjestys" method="POST">
+                            
+<input type="hidden" name="jarjestys" th:value="${annosraakaaine.jarjestys}"/>
+                            
+<input type="text" name="jarjestys"/><br/>
+                                                   
+</form>
+                    
+M‰‰r‰<br/>
+                        
+<form action="/annosraakaaine/:maara" method="POST">
+                            
+<input type="hidden" name="maara" th:value="${annosraakaaine.maara}"/>
+                            
+<input type="text" name="maara"/><br/>
+                                                   
+</form>
+                    
+Ohje<br/>
+                        
+<form action="/annosraakaaine/:ohje" method="POST">
+                            
+<input type="hidden" name="ohje" th:value="${annosraakaaine.ohje}"/>
+                            
+<input type="text" name="ohje"/><br/> 
+                                                   
+</form>
+ 
+<input type="submit" value="Lis‰‰"/><br/>                   
+</p>
+ 
+              
+<a href="/index">Smoothielistaukseen</a>               
+</body>
+
+</html>
